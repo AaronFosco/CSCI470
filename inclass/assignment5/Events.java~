@@ -1,0 +1,9 @@
+import javax.swing.JFrame;
+public class Events {
+  public static void main(String[] args) {
+    EventsFrame evFrame = new EventsFrame();
+    evFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    evFrame.setSize(450, 400);
+    evFrame.setVisible(true);
+  }
+}

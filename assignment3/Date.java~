@@ -1,0 +1,55 @@
+public class Date {
+  private int day, month, year;
+  
+  Date(int d, int m, int y) {
+    day = d;
+    month = m;
+    year = y;
+  }
+  
+  public int daysSinceJan1() {
+    int rv = 0;
+    switch(month) {
+      case 1:
+        rv = 1 - day;
+        break;
+      case 2:
+        rv = day + 30;
+        break;
+      case 3:
+        rv = day + 58;
+        break;
+      case 4:
+        rv = day + 89;
+        break;
+      case 5:
+        rv = day + 119;
+        break;
+      case 6:
+        rv = day + 150;
+        break;
+      case 7:
+        rv = day + 180;
+        break;
+      case 8:
+        rv = day + 211;
+        break;
+      case 9:
+        rv = day + 242;
+        break;
+      case 10:
+        rv = day + 272;
+        break;
+      case 11:
+        rv = day + 303;
+        break;
+      case 12:
+        rv = day + 333;
+        break;
+    }
+    if ((y % 4) == 0 && ((y % 100) == (y % 400)))
+      rv++;
+    
+    return rv;
+  }
+}

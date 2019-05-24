@@ -1,0 +1,48 @@
+/*
+  _______________________________________________________________
+ /                                                               \
+||  Course: CSCI-470     Inclass #: 2    Semester: Summer 2018   ||
+||                                                               ||
+||  NAME:  Aaron Fosco    Z-ID: z1835687     Section: 1          ||
+||                                                               ||
+||                                                               ||
+||  Due: Thursday 6/28/2018 by 10:15AM                           ||
+||                                                               ||
+||  Description:                                                 ||
+||    
+ \_______________________________________________________________/
+*/
+import java.io.*;
+
+public class CheckIdentifiers
+{
+ public static void main(String[] args) throws IOException
+ { 
+   String ident;
+   char hold;
+   Bool end = false;
+   System.out.println("Please enter a vaild java identifier: ");
+   
+   while (end != true)
+   {
+     hold = (char) System.in.read();
+     if (hold.isLetter() && hold.isDigit())
+       ident.concat(hold);
+     else if (hold == null)
+     {
+       System.out.println("At least one character is needed!");
+       end = true;
+     }
+     else if (hold == '\n') 
+     {
+       end = true;
+       System.out.println("\nYou entered: " + ident + " and it was legal!");
+     } 
+     else
+     {
+       System.out.prinlnt("Illegal character: " + hold);
+       end = true;
+     }
+   }
+ }  
+}

@@ -1,0 +1,28 @@
+/*
+  _______________________________________________________________
+ /                                                               \
+||  Course: CSCI-470     Inclass #: 2    Semester: Summer 2018   ||
+||                                                               ||
+||  NAME:  Aaron Fosco    Z-ID: z1835687     Section: 1          ||
+||                                                               ||
+||                                                               ||
+||  Due: Thursday 6/28/2018 by 10:15AM                           ||
+||                                                               ||
+||  Description:                                                 ||
+||    
+ \_______________________________________________________________/
+*/
+import java.io.*;
+
+public class CheckItentifiers
+{
+ public static void main(String[] args) throws IOException
+ { 
+   String itent;
+   System.out.println("Please enter a vaild java identifier: ");
+   for (int i = 0; i < 5; i++)
+   {
+     System.in.read(itent);
+   }
+ }  
+}

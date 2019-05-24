@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class ParkingCharges {
+  public static void main(String[] args) {
+    double charge;
+    int hours;
+    Scanner scan = new Scanner(System.in);
+    boolean endval = false;
+    while (!endval) {
+      System.out.println("Enter The ammount of hours You've been parked:");
+      hours = scan.nextInt();
+      System.out.printf("You owe $%d.\n", caclulateCharges(hours));
+      System.out.print("Would you like to calculate another customer's parking hours?\n1 for yes,0 for no:");
+      endval = scan.nextBoolean();
+    }
+  }
+  
+  public double calculateCharges(int hours) {
+   double rv;
+   if (hours <= 3)
+     rv = 2.00;
+   else
+     rv = 2.00 + (.5 * hours);
+   return (rv >= 10.00) ? 10.00 : rv;
+  }
+}

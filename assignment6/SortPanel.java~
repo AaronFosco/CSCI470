@@ -1,0 +1,93 @@
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.util.Random;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+
+public class SortPanel extends JPanel {
+  private JButton popArr;
+  private JButton sort;
+  private JComboBox selSort;
+  private String[] sortTypes;
+  private SortAnimationPanel sortPanel;
+  
+  public SortPanel() {
+    super(new FlowLayout(FlowLayout.CENTER, 2, 1));
+    setPreferredSize(new Dimension(445, 350));
+    
+    sortPanel = new SortAnimationPanel();
+    sortTypes = new String[]{"Selection", "Bubble", "Heap"};
+    popArr = new JButton("Populate Array");
+    sort = new JButton("Sort");
+    selSort = new JComboBox<String>(sortTypes);
+    
+    sort.setEnabled(false);
+    sortPanel.setPreferredSize(new Dimension(440, 300));
+    sortPanel.setBackground(new Color(100, 150, 100));
+    
+    EventsHandler buttonH = new EventsHandler();
+    
+    add(sortPanel);
+    add(popArr);
+    add(sort);
+    add(selSort);
+    
+    popArr.addActionListener(buttonH);
+    sort.addActionListener(buttonH);
+    
+  }
+  private class SortAnimationPanel extends JPanel implements Runnable {
+    private int[] sortable;
+    
+    public SortAnimationPanel() {
+      super(new FlowLayout(FlowLayout.LEADING, 2, 1));
+    }
+        
+    public void populateArr() {
+      sortable = new int[440];
+      Random rand = new Random(System.currentTimeMillis());
+      for (int i = 0; i < sortable.length; i++)
+        sortable[i] = rand.nextInt(300);
+    }
+    
+    @Override
+    public void paintComponent(Graphics g) {  
+      super.paintComponent(g);
+      this.setBackground(Color.WHITE);
+      
+      g.setColor(Color.BLUE);
+      if (sortable != null) {
+        for (int i = 0; i < sortable.length; i++)
+          g.drawLine(i, (300 - sortable[i]), i, 300);
+      }
+    }
+    
+    @Override
+    public void run() {
+    }
+  }
+  private class EventsHandler implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent event) {
+      if (event.getActionCommand() == "Populate Array") {
+        sortPanel.populateArr();
+        sortPanel.repaint();
+        
+        popArr.setEnabled(false);
+        sort.setEnabled(true);
+      } else {
+        //sort was clicked
+        //obtain what JComboBox was on
+        //conduct the sort based on that
+        //call render on subthread of each outer loop sort
+        //re-enable pop array
+        //disable sort
+      }
+    }
+  }
+}

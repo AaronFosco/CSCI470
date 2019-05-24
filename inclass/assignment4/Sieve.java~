@@ -1,0 +1,17 @@
+import java.util.Arrays;
+public class Sieve {
+  public static void main(String[] args) {
+    boolean[] sieveArray = new boolean[1000];
+    Arrays.fill(sieveArray, true);
+    for (int count = 2; count <= 999; count++) {
+      if (sieveArray[count] == true) {
+      for (int inner = 2; inner*count <= 999; inner++) {
+        sieveArray[inner*count] = false;
+      }
+    } 
+  }
+  }
+  for (int it = 2; it <= 999; it++)
+    System.out.print(" " + sieveArray[it]);
+  System.out.println(" ");
+}

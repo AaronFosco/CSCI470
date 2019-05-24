@@ -1,0 +1,24 @@
+import java.io.*;
+// we need to put throws io exception at the end of one of the methods to ignore a try/catch statement
+public class MileRedeemer {
+  Destination[] destinationArray;
+  public void readDestinations(Scanner fileScan) {
+     String inpLine = "";
+     ArrayList<Destination> destList = new ArrayList<Destination>();
+     while (fileScan.hasNext()) {
+       inpLine = fileScan.next();
+       Destination hold = new Destination(inpLine);
+       destList.add(hold);
+     }
+     destinationArray = (Destination[]) destList.toArray(new Destination[destList.size()]);
+  }
+  public String[] getCityNames() {
+    return "  ";
+  }
+  public String[] redeemMiles(int miles, int months) {
+    return "  ";
+  }
+  public int getRemainingMiles() {
+    return 0;
+  } 
+}

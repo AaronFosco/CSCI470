@@ -1,0 +1,20 @@
+import javax.swing.JFrame;
+import java.awt.FlowLayout;
+public class SortPanelApp extends JFrame {
+  public SortPanelApp(String s) {
+    super(s);
+    setLayout(new FlowLayout(FlowLayout.LEADING, 2, 2));
+    setResizable(false);
+    SortPanel sp1 = new SortPanel();
+    SortPanel sp2 = new SortPanel();
+    add(sp1);
+    add(sp2);
+  }
+  
+  public static void main(String[] args) {
+    SortPanelApp mainWindow = new SortPanelApp("Sorting Algorithm");
+    mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    mainWindow.setSize(900, 390);
+    mainWindow.setVisible(true);
+  }
+}

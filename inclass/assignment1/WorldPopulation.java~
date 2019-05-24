@@ -1,0 +1,25 @@
+/*
+  _______________________________________________________________
+ /                                                               \
+||  Course: CSCI-470     Inclass #: 1      Semester: Summer 2018 ||
+||                                                               ||
+||  NAME:  Aaron Fosco    Z-ID: z1835687     Section: 1          ||
+||                                                               ||
+||                                                               ||
+||  Due: Tuesday 6/26/2018 by 11:59PM                            ||
+||                                                               ||
+||  Description:                                                 ||
+||   A Simple 'Hello World!' Program. Will output 'Hello World!' ||
+ \_______________________________________________________________/
+*/
+public class WorldPopulation {
+  public static void main(String[] args) {
+   long curPop =  7631766825;
+   
+   System.out.println("The Current population is: " + curPop); 
+    
+  
+  
+  
+  }
+}

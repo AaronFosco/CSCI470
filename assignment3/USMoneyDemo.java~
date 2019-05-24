@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class USMoneyDemo {
+  public static void main(String[] args) {
+    int alpha, beta;
+    Scanner scan = new Scanner(System.in);
+    System.out.println("How many dollars for person 1?");
+    alpha = scan.nextInt();
+    System.out.println("How many cents?");
+    beta = scan.nextInt();
+    USMoney p1 = new USMoney(alpha, beta);
+    System.out.println("How many dollars for person 2?");
+    alpha = scan.nextInt();
+    System.out.println("How many cents?");
+    beta = scan.nextInt();
+    USMoney p2 = new USMoney(alpha, beta);
+    USMoney p3 = p2.plus(p1);
+    System.out.printf("If person 1 and person 2 where to pool their money together they'd have\nDollars:%d \nCents:%d",
+                      p3.getDollars(),
+                      p3.getCents());
+  }
+}
+                      
+    

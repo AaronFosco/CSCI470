@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.Scanner;
+public class MileRedemptionApp {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    String filename = "";
+    
+    System.out.print("Please enter the name of the file: ");
+    filename = scan.next();
+    FileReader fr = new FileReader(filename);
+    MileRedeemer miler = new MileRedeemer();
+    miler.(fr);
+  }
+}

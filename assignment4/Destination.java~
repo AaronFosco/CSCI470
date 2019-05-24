@@ -1,0 +1,22 @@
+public class Destination {
+  String destn;
+  int normM, flyC, firstClUp, starM, endM;
+  public Destination() {
+    destn = " ";
+    norM = 0;
+    flyC = 0;
+    firstClUp = 0;
+    starM = 0;
+    endM = 0;
+  }
+  public Destination(String list) {
+    String[] strAr = list.split(":");
+    String[] monthAr = strAr[strAr.size()-1].split("-");
+    destn = strAr[0];
+    norM = strAr[1];
+    flyC = strAr[2];
+    fistClUp = strAr[3];
+    starM = monthAr[0];
+    endM = monthAr[1];
+  }
+}
